@@ -36,14 +36,18 @@
       "type": "ProfilePage",
       "nav": "Home",
       "title": "Hardi Jain | SaaS & AI-Enabled Product Manager",
-      "description": "Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery."
+      "description": "Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery.",
+      "published": "2026-09-20",
+      "updated": "2026-09-26"
     },
     {
       "path": "/product-stories",
       "type": "CollectionPage",
       "nav": "Product case studies",
       "title": "SaaS product case studies: B2C, B2B, enterprise | Hardi Jain",
-      "description": "Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery."
+      "description": "Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/checkout-conversion-bot-detection",
@@ -52,7 +56,9 @@
       "parent": "/product-stories",
       "nav": "Checkout conversion and bot detection",
       "title": "Checkout conversion drop traced to bot traffic | Hardi Jain",
-      "description": "Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA."
+      "description": "Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/down-payment-emi-high-value-checkout",
@@ -61,7 +67,9 @@
       "parent": "/product-stories",
       "nav": "Down payment and EMI checkout",
       "title": "Down payment + EMI for high-value checkout | Hardi Jain",
-      "description": "B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts."
+      "description": "B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/partial-payments-education-payment-links",
@@ -70,7 +78,9 @@
       "parent": "/product-stories",
       "nav": "Partial payments for school fees",
       "title": "Partial payments for school fee payment links | Hardi Jain",
-      "description": "B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment."
+      "description": "B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/cross-platform-payment-ux-standardization",
@@ -79,7 +89,9 @@
       "parent": "/product-stories",
       "nav": "Cross-platform payment UX",
       "title": "Cross-platform payment UX standardization | Hardi Jain",
-      "description": "B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement."
+      "description": "B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/self-serve-payment-links-merchant-configuration",
@@ -88,7 +100,9 @@
       "parent": "/product-stories",
       "nav": "Self-serve payment links",
       "title": "Self-serve payment links for merchants | Hardi Jain",
-      "description": "B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share."
+      "description": "B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/payment-links-access-governance",
@@ -97,7 +111,9 @@
       "parent": "/product-stories",
       "nav": "Access control for sales agents",
       "title": "Payment link access control for sales agents | Hardi Jain",
-      "description": "Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business."
+      "description": "Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/product-stories/cross-squad-execution-and-delivery",
@@ -106,7 +122,9 @@
       "parent": "/product-stories",
       "nav": "Cross-squad delivery",
       "title": "Cross-squad delivery on a payments platform | Hardi Jain",
-      "description": "Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem."
+      "description": "Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/automation-stories/audit-reconciliation-automation",
@@ -115,7 +133,9 @@
       "parent": "/map",
       "nav": "Audit reconciliation automation",
       "title": "Audit reconciliation automation case study | Hardi Jain",
-      "description": "How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations."
+      "description": "How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/automation-stories/fund-operations-nav-reporting",
@@ -124,21 +144,27 @@
       "parent": "/map",
       "nav": "Fund operations and NAV reporting",
       "title": "Fund operations and NAV reporting automation | Hardi Jain",
-      "description": "Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours."
+      "description": "Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours.",
+      "published": "2026-09-23",
+      "updated": "2026-09-24"
     },
     {
       "path": "/map",
       "type": "WebPage",
       "nav": "Career journey",
       "title": "From audit to SaaS product and AI | Hardi Jain",
-      "description": "Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them."
+      "description": "Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them.",
+      "published": "2026-09-22",
+      "updated": "2026-09-26"
     },
     {
       "path": "/how-i-work",
       "type": "WebPage",
       "nav": "How I work",
       "title": "How I work: product management principles | Hardi Jain",
-      "description": "Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features."
+      "description": "Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features.",
+      "published": "2026-09-22",
+      "updated": "2026-09-26"
     }
   ]
 }

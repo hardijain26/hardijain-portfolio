@@ -1,12 +1,67 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "^www\\..+$" }], "destination": "https://hardijain.com/$1", "permanent": true }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^www\\..+$"
+        }
+      ],
+      "destination": "https://hardijain.com/$1",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/journey/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/journey(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
   ],
   "rewrites": [
-    { "source": "/journey/:path*", "destination": "/index.html" }
+    {
+      "source": "/journey/:path*",
+      "destination": "/journey"
+    }
   ]
 }

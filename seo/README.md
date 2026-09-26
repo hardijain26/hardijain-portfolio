@@ -15,3 +15,10 @@ After any change to a story or to `pages.json`:
     node scripts/build-seo.mjs
 
 Journey chapters (`/journey/*`) are noindex and left out of the sitemap.
+
+`seo/pages.json` also holds `published` and `updated` dates per page. Change
+`updated` when you edit a page: it feeds the sitemap `lastmod` and the
+article `dateModified`, so a rebuild alone doesn't mark every page as changed.
+
+The app builds each view the first time it opens, so a page's rendered HTML
+holds only its own content. Fonts are self-hosted in `fonts/`.
