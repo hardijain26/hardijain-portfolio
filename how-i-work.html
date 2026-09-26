@@ -121,10 +121,12 @@
   }
  ]
 }</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/caveat-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/caveat-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-ext-400.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --bg:#F7F1E3;
   --card:#FBF7EC;
@@ -138,7 +140,7 @@
   --font:'Caveat','Segoe Print','Bradley Hand',cursive;
   --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --ul:rgba(59,44,36,.35);
-  --fmuted:#8A7B6E;
+  --fmuted:#776859;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -191,7 +193,7 @@ a{color:inherit}
 /* left column: the title first, then the quote */
 .copy{display:grid}
 .copy .blk{grid-area:1/1;align-self:center}
-h1{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 20px}
+h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 20px}
 .quote{margin:0}
 .quote p{font-weight:700;font-size:clamp(36px,5vw,66px);line-height:1.04;margin:0 0 22px}
 .rule{width:64px;height:3px;background:var(--accent);margin:0 0 20px}
@@ -631,11 +633,17 @@ h1{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 
 
 <!--SSR:start--><div id="ssr"><p><a href="/">Hardi Jain</a> · SaaS product manager · B2C, B2B and AI · Chartered Accountant</p><main><h1>How I work</h1>
 <h3>Empathy first</h3>
+<p>Understand user intent before optimizing metrics or flows.</p>
 <h3>Data as a decision tool</h3>
+<p>Use data to validate judgment, not replace it.</p>
 <h3>Moments that matter</h3>
+<p>Prioritize clarity at high-intent decision points.</p>
 <h3>Progress over perfection</h3>
+<p>Ship incrementally, learn quickly, reduce risk.</p>
 <h3>Speed with trust</h3>
-<h3>Systems over features</h3></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
+<p>Move fast without compromising reliability or user confidence.</p>
+<h3>Systems over features</h3>
+<p>Build scalable systems instead of one-off solutions.</p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
   <a class="btn contact" id="contact" href="https://www.linkedin.com/in/hardijain-pm/" target="_blank" rel="noopener">Contact me</a>
@@ -647,7 +655,7 @@ h1{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 
   <div class="hero" id="hero">
     <div class="copy">
       <div class="blk c-title">
-        <h1><span class="h1-who">Hardi Jain · SaaS product manager</span><span class="w" style="--d:0s">Connecting</span> <span class="w" style="--d:.7s">the</span> <span class="w accent" style="--d:1.05s">dots</span></h1>
+        <p class="hero-h"><span class="h1-who">Hardi Jain · SaaS product manager</span><span class="w" style="--d:0s">Connecting</span> <span class="w" style="--d:.7s">the</span> <span class="w accent" style="--d:1.05s">dots</span></p>
       </div>
       <div class="blk c-quote">
         <blockquote class="quote"><p>“You can’t connect the dots looking forward; you can only connect them <span class="accent">looking backward.</span>”</p></blockquote>
@@ -670,20 +678,6 @@ h1{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 
       </div>
     </div>
   </div>
-  <section class="sr" aria-label="About this portfolio">
-    <h2>Hardi Jain, SaaS product manager for B2C, B2B and AI products</h2>
-    <p>Hardi Jain is a SaaS product manager and Chartered Accountant. He has shipped B2C checkout and payment experiences, B2B merchant self-serve tools and enterprise platform work at PayU, and is now building with AI.</p>
-    <p>He came to product through internal audit, statutory audit and automation at Kotak Bank, PwC, KPMG and JPMorgan Chase, so he reads a funnel and a ledger the same way: find where the numbers stop matching the evidence.</p>
-    <h3>Product case studies</h3>
-    <ul>
-      <li>B2C: checkout conversion and bot detection, down payment and EMI for high-value checkout, partial payments for school fees.</li>
-      <li>B2B SaaS: self-serve payment links, cross-platform payment UX standardization.</li>
-      <li>Enterprise: access control for external sales agents, cross-squad delivery on one platform.</li>
-      <li>Automation: audit reconciliation, fund operations and NAV reporting.</li>
-    </ul>
-    <h3>How I work</h3>
-    <p>Empathy first. Data as a decision tool. Moments that matter. Progress over perfection. Speed with trust. Systems over features.</p>
-  </section>
   </main>
   <section class="view" id="v-nav" aria-label="The map"></section>
   <section class="view" id="v-how" aria-label="How I work"></section>
@@ -717,7 +711,7 @@ h1{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;margin:0 0 
 <p class="sr" id="live" aria-live="polite"></p>
 
 <script>
-(function(){ var x=document.getElementById('ssr'); if(x) x.parentNode.removeChild(x); })();
+(function(){ var x=document.getElementById('ssr'); if(!x) return; Array.prototype.forEach.call(x.querySelectorAll(':scope > p, :scope > main'),function(e){ e.parentNode.removeChild(e); }); })();
 var SK=(function(){
   /* ---------- primitives: every drawn element carries --t (delay, seconds) ---------- */
   function mg(a,b){var r={},k;a=a||{};for(k in a)r[k]=a[k];for(k in b)r[k]=b[k];return r;}
@@ -1311,6 +1305,10 @@ if(typeof module!=='undefined')module.exports=SK;
   var views={intro:$('v-intro'),nav:$('v-nav'),chapter:$('v-chapter'),how:$('v-how'),story:$('v-story'),story2:$('v-story2'),prod:$('v-prod'),pstory:$('v-pstory')};
   var player=$('player'), sketch=$('sketch'), sk=$('sk'), msgEl=$('msg'), nextBtn=$('next'), cprog=$('cprog'), aix=$('aix'), mlink=$('mlink');
   var cur=null, bi=0, ptimers=[];
+  /* views are built the first time they open, so each URL's rendered page holds only its own content */
+  var LAZY={};
+  function lazy(name,fn){ LAZY[name]=fn; }
+  function ensure(name){ var f=LAZY[name]; if(f){ delete LAZY[name]; f(); } }
   /* history: the map is always the entry right after the landing page, so Back from the map lands on the landing page */
   var hIdx=0, navIdx=1;
   /* ---------- real paths, one per page, so each is indexable and shareable ---------- */
@@ -1378,18 +1376,27 @@ if(typeof module!=='undefined')module.exports=SK;
 
   var COMPANIES=['Kotak Bank','PwC','KPMG','JPMorgan Chase','PayU'];
   var PRINCIPLES=[["user", "Empathy first", "Understand user intent before optimizing metrics or flows."], ["measure", "Data as a decision tool", "Use data to validate judgment, not replace it."], ["target", "Moments that matter", "Prioritize clarity at high-intent decision points."], ["improve", "Progress over perfection", "Ship incrementally, learn quickly, reduce risk."], ["shield", "Speed with trust", "Move fast without compromising reliability or user confidence."], ["workflow", "Systems over features", "Build scalable systems instead of one-off solutions."]];
-  views.nav.innerHTML='<div class="slim" id="slim" aria-label="Chapters"></div>'+
+  lazy('nav',function(){ views.nav.innerHTML='<div class="slim" id="slim" aria-label="Chapters"></div>'+
     '<div class="page map"><h1>Different dots. A bigger picture.</h1>'+
     '<p class="intro">I didn’t start out building products. I started by understanding how complex systems work and what happens when they fail. Each stop below is a chapter that led to the next.</p>'+
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
-    '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p></div>';
-  views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
+    '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
+    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':''); }).join('')+'</div></div>'; });
+  lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
     '<p class="hint2">Pick any one to see what it means in practice.</p>'+
     '<div class="pgrid">'+
     PRINCIPLES.map(function(p){ return '<details class="pr"><summary><svg class="pi" viewBox="0 0 40 40" aria-hidden="true"><path d="'+SK.iconD(p[0],20,20,1)+'"/></svg><span>'+p[1]+'</span></summary><p>'+p[2]+'</p></details>'; }).join('')+
     '</div></div>';
+    var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if(!fine) return;
+    Array.prototype.forEach.call(views.how.querySelectorAll('details.pr'),function(dt){
+      dt.addEventListener('mouseenter',function(){ dt.open=true; });
+      dt.addEventListener('mouseleave',function(){ dt.open=false; });
+      dt.querySelector('summary').addEventListener('click',function(e){ if(e.detail>0) e.preventDefault(); });
+    });
+  });
 
   /* ---------- the full stories: flow diagrams built from a few primitives ---------- */
   function nd(t,c){ return '<span class="nd'+(c?' '+c:'')+'">'+t+'</span>'; }
@@ -1582,7 +1589,7 @@ if(typeof module!=='undefined')module.exports=SK;
     });
   }
   var STORY_IDS=STORIES.map(function(d){ return d.id; }).concat(['pstory']);
-  STORIES.forEach(buildStory);
+  STORIES.forEach(function(d){ lazy(d.id,function(){ buildStory(d); }); });
   /* ---------- product stories: three bands, each a set of teaser cards ---------- */
   function lens(list){ return '<p class="pc-lens">'+list.map(function(t){ return '<span>'+t+'</span>'; }).join('')+'</p>'; }
   function pcard(c){
@@ -2224,7 +2231,7 @@ if(typeof module!=='undefined')module.exports=SK;
     if(!sc) return;
     try{ sc.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); }catch(err){ sc.scrollIntoView(); }
   });
-  views.prod.innerHTML='<div class="page story"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
+  lazy('prod',function(){ views.prod.innerHTML='<div class="page story"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>Product stories</h1>'+
     '<p class="st-lede">Different customers. Different constraints. Different product problems.</p>'+
     '<p class="ps-lede">From optimizing a consumer checkout journey to standardizing platforms and improving how enterprise teams build — these are the product problems I have worked through.</p>'+
@@ -2242,7 +2249,7 @@ if(typeof module!=='undefined')module.exports=SK;
              cb('ENTERPRISE',chain(['Organization system','Velocity'],'hi'))),
        col(ar(),nd('PRODUCT THINKING','on')))+
     '</div></div>'+
-    '</div>';
+    '</div>'; });
 
   function openStory(){
     var i,v;
@@ -2355,6 +2362,7 @@ if(typeof module!=='undefined')module.exports=SK;
       push=false;
     }
     pclear();
+    ensure(name);
     Object.keys(views).forEach(function(k){ views[k].classList.toggle('on',k===name); });
     var mk=$('mark'), chap=(name==='chapter');
     mk.hidden=(name==='intro');
@@ -2442,15 +2450,6 @@ if(typeof module!=='undefined')module.exports=SK;
   $('explore').addEventListener('click',function(){ go('nav'); });
   $('homeP').setAttribute('d',SK.iconD('home',20,20,1));
   $('mark').addEventListener('click',function(){ go('nav',!views.nav.classList.contains('on')); });
-  (function(){
-    var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if(!fine) return;
-    Array.prototype.forEach.call(views.how.querySelectorAll('details.pr'),function(dt){
-      dt.addEventListener('mouseenter',function(){ dt.open=true; });
-      dt.addEventListener('mouseleave',function(){ dt.open=false; });
-      dt.querySelector('summary').addEventListener('click',function(e){ if(e.detail>0) e.preventDefault(); });
-    });
-  })();
   cprog.addEventListener('click',function(e){
     var b=e.target.closest('[data-b]'); if(!b) return;
     var k=parseInt(b.getAttribute('data-b'),10);

@@ -43,6 +43,8 @@ for (const page of cfg.pages) {
   const body = await tab.evaluate(() => {
     const view = document.querySelector('.view.on');
     if (!view) return '';
+    // Closed <details> hide their text from innerText; open them so the principles are captured.
+    view.querySelectorAll('details').forEach((d) => { d.open = true; });
     const skip = (el) => el.closest('svg, .sbar, .st-viz, .pc-viz, button, .back, .st-cta, .tags, .more, .pc-go, .hint2');
     const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const out = [];
