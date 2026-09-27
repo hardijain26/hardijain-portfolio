@@ -700,7 +700,7 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <p>Within one month of launch, SRT improved from 60% to 67%.</p>
 <p>The bot traffic was mitigated without introducing an upfront CAPTCHA challenge into the checkout experience.</p>
 <h3>What this story says about how I solve problems</h3>
-<p><a href="/product-stories/down-payment-emi-high-value-checkout">Next story</a></p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/building/pantry-vault-ai">What I’m building: Pantry Vault</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
+<p><a href="/product-stories/down-payment-emi-high-value-checkout">Next story</a></p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/building/pantry-vault-ai">What I’m building: Pantry Vault</a></li><li><a href="/building/med-voice">What I’m building: Med-Voice</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
   <a class="btn contact" id="contact" href="https://www.linkedin.com/in/hardijain-pm/" target="_blank" rel="noopener">Contact me</a>
@@ -743,6 +743,7 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
   <section class="view" id="v-prod" aria-label="Product stories"></section>
   <section class="view" id="v-pstory" aria-label="Product story"></section>
   <section class="view" id="v-build" aria-label="What I’m building: Pantry Vault"></section>
+  <section class="view" id="v-medvoice" aria-label="What I’m building: Med-Voice"></section>
   <section class="view" id="v-chapter" aria-label="Chapter">
     <div class="player" id="player">
       <div class="pl-top"><a class="link" href="/map" data-go="nav">Map</a></div>
@@ -1360,7 +1361,7 @@ if(typeof module!=='undefined')module.exports=SK;
   var order=['ia','sa','au','pm','ai'];
   var progress={ia:false,sa:false,au:false,pm:false,fin:false};
   var CH={}; SK.chapters.forEach(function(c){ CH[c.id]=c; }); CH.fin=SK.finale;
-  var views={intro:$('v-intro'),nav:$('v-nav'),chapter:$('v-chapter'),how:$('v-how'),story:$('v-story'),story2:$('v-story2'),prod:$('v-prod'),pstory:$('v-pstory'),build:$('v-build')};
+  var views={intro:$('v-intro'),nav:$('v-nav'),chapter:$('v-chapter'),how:$('v-how'),story:$('v-story'),story2:$('v-story2'),prod:$('v-prod'),pstory:$('v-pstory'),build:$('v-build'),medvoice:$('v-medvoice')};
   var player=$('player'), sketch=$('sketch'), sk=$('sk'), msgEl=$('msg'), nextBtn=$('next'), cprog=$('cprog'), aix=$('aix'), mlink=$('mlink');
   var cur=null, bi=0, ptimers=[];
   /* views are built the first time they open, so each URL's rendered page holds only its own content */
@@ -1372,6 +1373,7 @@ if(typeof module!=='undefined')module.exports=SK;
   /* ---------- real paths, one per page, so each is indexable and shareable ---------- */
   var SITE='https://hardijain.com';
   var ROUTES={intro:'/',nav:'/map',how:'/how-i-work',build:'/building/pantry-vault-ai',
+    medvoice:'/building/med-voice',
     story:'/automation-stories/audit-reconciliation-automation',
     story2:'/automation-stories/fund-operations-nav-reporting',
     prod:'/product-stories'};
@@ -1386,7 +1388,7 @@ if(typeof module!=='undefined')module.exports=SK;
   var PID={}, CHID={}, k;
   for(k in PSLUG) PID[PSLUG[k]]=k;
   for(k in CHSLUG) CHID[CHSLUG[k]]=k;
-  /*SEO:start*/var SEO={"/":{"title":"Hardi Jain | SaaS & AI-Enabled Product Manager","description":"Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery."},"/product-stories":{"title":"SaaS product case studies: B2C, B2B, enterprise | Hardi Jain","description":"Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery."},"/product-stories/checkout-conversion-bot-detection":{"title":"Checkout conversion drop traced to bot traffic | Hardi Jain","description":"Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA."},"/product-stories/down-payment-emi-high-value-checkout":{"title":"Down payment + EMI for high-value checkout | Hardi Jain","description":"B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts."},"/product-stories/partial-payments-education-payment-links":{"title":"Partial payments for school fee payment links | Hardi Jain","description":"B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment."},"/product-stories/cross-platform-payment-ux-standardization":{"title":"Cross-platform payment UX standardization | Hardi Jain","description":"B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement."},"/product-stories/self-serve-payment-links-merchant-configuration":{"title":"Self-serve payment links for merchants | Hardi Jain","description":"B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share."},"/product-stories/payment-links-access-governance":{"title":"Payment link access control for sales agents | Hardi Jain","description":"Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business."},"/product-stories/cross-squad-execution-and-delivery":{"title":"Cross-squad delivery on a payments platform | Hardi Jain","description":"Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem."},"/automation-stories/audit-reconciliation-automation":{"title":"Audit reconciliation automation case study | Hardi Jain","description":"How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations."},"/automation-stories/fund-operations-nav-reporting":{"title":"Fund operations and NAV reporting automation | Hardi Jain","description":"Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours."},"/building/pantry-vault-ai":{"title":"Building Pantry Vault with AI tools, no engineer | Hardi Jain","description":"Personal project case study: Indian homes waste about 55 kg of food per person a year. How I took an AI Studio prototype to a live pantry app with no engineer."},"/map":{"title":"From audit to SaaS product and AI | Hardi Jain","description":"Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them."},"/how-i-work":{"title":"How I work: product management principles | Hardi Jain","description":"Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features."}};/*SEO:end*/
+  /*SEO:start*/var SEO={"/":{"title":"Hardi Jain | SaaS & AI-Enabled Product Manager","description":"Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery."},"/product-stories":{"title":"SaaS product case studies: B2C, B2B, enterprise | Hardi Jain","description":"Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery."},"/product-stories/checkout-conversion-bot-detection":{"title":"Checkout conversion drop traced to bot traffic | Hardi Jain","description":"Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA."},"/product-stories/down-payment-emi-high-value-checkout":{"title":"Down payment + EMI for high-value checkout | Hardi Jain","description":"B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts."},"/product-stories/partial-payments-education-payment-links":{"title":"Partial payments for school fee payment links | Hardi Jain","description":"B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment."},"/product-stories/cross-platform-payment-ux-standardization":{"title":"Cross-platform payment UX standardization | Hardi Jain","description":"B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement."},"/product-stories/self-serve-payment-links-merchant-configuration":{"title":"Self-serve payment links for merchants | Hardi Jain","description":"B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share."},"/product-stories/payment-links-access-governance":{"title":"Payment link access control for sales agents | Hardi Jain","description":"Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business."},"/product-stories/cross-squad-execution-and-delivery":{"title":"Cross-squad delivery on a payments platform | Hardi Jain","description":"Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem."},"/automation-stories/audit-reconciliation-automation":{"title":"Audit reconciliation automation case study | Hardi Jain","description":"How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations."},"/automation-stories/fund-operations-nav-reporting":{"title":"Fund operations and NAV reporting automation | Hardi Jain","description":"Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours."},"/building/pantry-vault-ai":{"title":"Building Pantry Vault with AI tools, no engineer | Hardi Jain","description":"Personal project case study: Indian homes waste about 55 kg of food per person a year. How I took an AI Studio prototype to a live pantry app with no engineer."},"/building/med-voice":{"title":"Building Med-Voice, a prescription read aloud | Hardi Jain","description":"Personal project case study: about half of long-term medication is taken incorrectly, often because the label can’t be read. Turning a prescription photo into spoken instructions in 11 languages, built with AI tools and no engineer."},"/map":{"title":"From audit to SaaS product and AI | Hardi Jain","description":"Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them."},"/how-i-work":{"title":"How I work: product management principles | Hardi Jain","description":"Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features."}};/*SEO:end*/
   var META={intro:['Hardi Jain | SaaS & AI-Enabled Product Manager','Hardi Jain, SaaS and AI-enabled product manager.']};
   function path(st){
     if(!st) return '/';
@@ -1440,7 +1442,8 @@ if(typeof module!=='undefined')module.exports=SK;
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
     '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
-    '<p class="more"><a class="link" href="/building/pantry-vault-ai" data-go="build">What I’m building<span class="ar" aria-hidden="true">→</span></a></p>'+
+    '<p class="more"><a class="link" href="/building/pantry-vault-ai" data-go="build">What I’m building: Pantry Vault<span class="ar" aria-hidden="true">→</span></a></p>'+
+    '<p class="more"><a class="link" href="/building/med-voice" data-go="medvoice">What I’m building: Med-Voice<span class="ar" aria-hidden="true">→</span></a></p>'+
     '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; var extra=id==='au'?'<p><a href="/automation-stories/fund-operations-nav-reporting" data-go="story2">Fund operations and NAV reporting</a></p>':''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':'')+extra; }).join('')+'</div></div>'; });
   lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
@@ -1693,6 +1696,79 @@ if(typeof module!=='undefined')module.exports=SK;
         '<strong>Enough technical depth to run a build:</strong> sign-in and per-user data, keeping API keys on the server, usage limits, provider fallback, reading error logs to find a root cause.',
         '<strong>Judgment:</strong> removing a feature that looked good but could cause harm, and being plain about what’s live and what isn’t.'],
      v:vs(row(['Problem framing','Scoping','Metrics'],'hi'),row(['Specs for AI','Reviewing AI output']),row(['Auth and data privacy','Cost control','Debugging']),row(['Product judgment'],'on'))}],
+    ends:[]
+  },{
+    id:'medvoice', tags:['#personalproject','#AIbuild','#nocode','#accessibility'],
+    title:'Building Med-Voice, a prescription label read aloud for seniors',
+    lede:'About half of people on long-term medicines don’t take them correctly, often because the label can’t be read. I wanted to see how far a product manager could get with AI tools and no engineer: a prescription photo turned into clear spoken instructions, built in an afternoon and shipped to a live URL.',
+    secs:[
+    {n:'01',k:'CONTEXT AND ROLE',
+     h:'A personal project, built in an afternoon. I was PM and builder.',
+     p:['I’m between roles and wanted a sharp test: could I take a real, evidenced problem from idea to a deployed, working product with AI tools alone, in about two hours?',
+        'I chose the problem, wrote every spec and prompt, reviewed and tested what came back, and shipped it. I wrote no code by hand.'],
+     v:vs(two(cb('MY ROLE',chain(['Problem and scope','Specs and prompts','Review and test','Launch'],'hi')),
+              cb('AI TOOLS DID',chain(['First prototype','Production code','Reading the label']))))},
+    {n:'02',k:'THE PROBLEM',
+     h:'The instructions are right there. Most people can’t use them.',
+     p:['The WHO puts adherence to long-term medication at about 50%. In India, only 40 to 60% of older adults take their medicines correctly, and low health literacy comes up again and again as the reason.',
+        'A label is small, clinical, and often printed in a language the patient doesn’t read well. “1 cap PO BID p.c.” means nothing at the kitchen table, and “twice daily” never says when.'],
+     v:vs(two(stat('~50%','of long-term medication is taken correctly (WHO)'),stat('40–60%','adherence among older adults in India')),
+          chain(['Tiny, clinical label','Wrong language','No sense of when','Missed or wrong doses']))},
+    {n:'03',k:'THE INSIGHT',
+     h:'The instructions already exist. Just remove the reading.',
+     p:['Every other medication app assumes you can already read and understand the label, then adds reminders on top. For the person I had in mind — a senior who reads slowly, in Tamil, not English — that assumption is the whole problem.',
+        'So the product does one thing well: it reads the label for you and speaks it, in your language, and only then reminds you.'],
+     v:col(nd('READ THE LABEL','on'),ar(),nd('SAY IT SIMPLY, ALOUD'),ar(),nd('IN THE USER’S LANGUAGE'),ar(),nd('REMIND AT DOSE TIME'),ar('↺'),nd('No reading, no typing','hi'))},
+    {n:'04',k:'THE SOLUTION',
+     h:'Point the camera. Hear what to take, and when.',
+     p:['<strong>Photograph the label.</strong> No typing, no searching for the medicine by name.',
+        '<strong>It reads and simplifies.</strong> AI pulls out the medicine and dose, rewrites the instructions in warm, plain language, and splits the day into meal-based times.',
+        '<strong>It speaks, in 11 languages.</strong> Hindi, Tamil, Bengali, Spanish and more, with a phonetic version behind the scenes so any phone pronounces the script correctly.',
+        '<strong>It reminds.</strong> A voice alarm at each dose time, with the one safety warning that matters pulled to the top.'],
+     v:vs(chain(['Photo of the label','AI reads &amp; simplifies','Spoken in the user’s language','Meal-based schedule','Voice reminders'],'hi'),
+          lbl('11 languages · phonetic transliteration for correct pronunciation · the one key warning highlighted'))},
+    {n:'05',k:'HOW I BUILT IT (NO-CODE)',
+     h:'A prompt, then a coding agent I directed.',
+     p:['I described the app in plain English to Google AI Studio and had a working prototype the same afternoon. The vision AI (Gemini) does the hard part — reading the label, simplifying, translating — so there was no OCR or model to train.',
+        'The prototype’s AI logic only ran on my machine and would have failed the moment it deployed. I directed a coding agent to move it into a serverless function so the live app actually works, then shipped it to Vercel.',
+        'Every change followed the same routine: I wrote what it had to do, the agent built it, and I tested before moving on.'],
+     v:vs(chain(['Idea in plain English','Google AI Studio prototype','Serverless API for the AI','Live on Vercel'],'hi'),
+          lbl('Google AI Studio for the app · Gemini vision for reading and translation · the browser’s own voice for audio · Vercel for hosting'))},
+    {n:'06',k:'KEY DECISIONS AND TRADEOFFS',
+     h:'What I chose, and what it cost.',
+     p:['<strong>Voice-first, not app-first.</strong> A less “appy” interface, in exchange for something a low-vision senior can actually use.',
+        '<strong>Lead B2B2C, through pharmacies.</strong> The person with the problem isn’t the one who pays; pharmacies and caregivers are. That reframed the go-to-market.',
+        '<strong>No invented market size.</strong> I documented the sizing method and inputs to validate instead of a number I couldn’t stand behind.',
+        '<strong>Flag the safety fallback.</strong> When the AI is busy the app shows sample guidance, clearly marked as a sample, never as a real reading.'],
+     v:vs.apply(null,[two(lbl('CHOSE'),lbl('GAVE UP'))].concat([['Voice-first','A familiar app look'],['B2B2C via pharmacies','Direct consumer revenue'],['No invented TAM','An impressive slide'],['Flagged fallback','A seamless-looking result']]
+          .map(function(x){ return two(nd(x[0],'hi'),nd(x[1])); })))},
+    {n:'07',k:'CHALLENGES I SOLVED',
+     h:'Four things that broke, and the fix for each.',
+     p:['<strong>The AI worked here and 404’d live.</strong> The label-reading endpoint only ran in local dev. I traced it and moved the logic into a serverless function so it exists in production.',
+        '<strong>The offline fallback showed the wrong medicine.</strong> When the AI was busy it returned a generic sample that a user could mistake for their own label. I flagged it so a sample can never pass as real.',
+        '<strong>The uploaded source broke the build.</strong> The exported files had lost their folder structure. I restored it so a clean build passes.',
+        '<strong>Untested across languages.</strong> I wrote a repeatable test that checks all 11 languages return complete, correctly-scripted, speakable text.'],
+     v:vs(outs([['ok','Dev-only API: moved to a serverless function'],['ok','Wrong-medicine fallback: flagged as a sample'],['ok','Broken build: folder structure restored'],['ok','11 languages: verified by a repeatable test']]))},
+    {n:'08',k:'IMPACT AND WHAT I’D MEASURE',
+     h:'A live, deployable prototype — no outside users yet.',
+     p:['There are no usage numbers to report. What exists: a deployable app that reads a label and speaks it in 11 languages, with meal-based reminders and a fallback that’s honest about when it can’t read the label.',
+        'Rather than claim results it hasn’t earned, I defined the metric that matters: doses each week where someone got accurate guidance and then took the medicine. Next is a small test with real seniors and caregivers.',
+        '<a href="https://medvoice-teal.vercel.app" target="_blank" rel="noopener">Live app</a> · <a href="https://github.com/hardijain26/med_voice" target="_blank" rel="noopener">Code on GitHub</a>'],
+     v:vs(lbl('WHAT I’D MEASURE'),
+          chain(['A correct first scan','The audio understood','A reminder set','Doses actually taken'],'hi'))},
+    {n:'09',k:'REFLECTION',
+     h:'AI gets you a demo in an afternoon. The product is everything after.',
+     p:['The demo took an afternoon. Making it safe took the real work: what happens when the AI is busy, how to keep a sample from looking like a real reading, how to sound right in a language the phone can’t render, and how to fail honestly.',
+        'The lesson repeats from my last build: read what the first version actually does, and test on the real hosting from the first change, not the fifth.'],
+     v:two(cb('AN AFTERNOON',chain(['Prompt','Prototype','Looks finished'])),
+           cb('THE REAL WORK',chain(['Safe fallbacks','Correct pronunciation','Works in production','Honest UI'],'hi')))},
+    {n:'10',k:'SKILLS',
+     h:'What this project shows.',
+     p:['<strong>Product:</strong> framing a problem with cited data, cutting scope to one job, choosing a metric that tests the core assumption, and picking a business model that matches who actually pays.',
+        '<strong>Working with AI:</strong> writing specs an AI can build from, reviewing output instead of trusting it, and catching a prototype’s fake features.',
+        '<strong>Enough technical depth to run a build:</strong> spotting a dev-only API, moving it to a serverless function, and writing a test that guards all 11 languages.',
+        '<strong>Judgment:</strong> refusing an invented market size, and making a safety fallback honest rather than seamless.'],
+     v:vs(row(['Problem framing','Scoping','Metrics','Business model'],'hi'),row(['Specs for AI','Reviewing AI output']),row(['Serverless fix','Language testing']),row(['Product judgment'],'on'))}],
     ends:[]
   }
 ];
