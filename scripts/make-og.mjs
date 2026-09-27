@@ -19,7 +19,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const slug = (p) => (p === '/' ? 'home' : p.slice(1).replace(/\//g, '__'));
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
-const LABEL = { B2C: 'B2C case study', B2B: 'B2B SaaS case study', Enterprise: 'Enterprise SaaS case study', Automation: 'Automation case study' };
+const LABEL = { B2C: 'B2C case study', B2B: 'B2B SaaS case study', Enterprise: 'Enterprise SaaS case study', Automation: 'Automation case study', 'Personal project': 'Personal build' };
 
 function card(page) {
   const title = page.title.replace(/ \| Hardi Jain$/, '');

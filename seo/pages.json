@@ -149,6 +149,17 @@
       "updated": "2026-09-24"
     },
     {
+      "path": "/building/pantry-vault-ai",
+      "type": "Article",
+      "section": "Personal project",
+      "parent": "/map",
+      "nav": "What I’m building: Pantry Vault",
+      "title": "Building Pantry Vault with AI tools, no engineer | Hardi Jain",
+      "description": "A personal project: taking an AI Studio prototype to a live pantry app with sign-in, a database, bill scanning and free-tier AI fallback. What I cut and why.",
+      "published": "2026-09-27",
+      "updated": "2026-09-27"
+    },
+    {
       "path": "/map",
       "type": "WebPage",
       "nav": "Career journey",

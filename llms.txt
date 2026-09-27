@@ -20,6 +20,10 @@ Hardi Jain came to product management through internal audit, statutory audit an
 - [Audit reconciliation automation](https://hardijain.com/automation-stories/audit-reconciliation-automation)
 - [Fund operations and NAV reporting automation](https://hardijain.com/automation-stories/fund-operations-nav-reporting)
 
+## What I'm building
+
+- [Pantry Vault](https://hardijain.com/building/pantry-vault-ai): a personal project. A pantry and recipe app for vegetarian households, taken from a Google AI Studio prototype to a live app with sign-in, a database, bill and order-screenshot scanning, and a free-tier AI fallback (Gemini, Groq, OpenRouter). Not yet tested with outside households.
+
 ## Background
 
 - [Career journey](https://hardijain.com/map): Kotak Bank, PwC, KPMG, JPMorgan Chase, PayU

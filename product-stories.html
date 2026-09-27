@@ -428,6 +428,12 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 .eqn .op{color:var(--accent);font-size:23px;line-height:1}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.shot{margin:0}
+.shot img{display:block;width:100%;max-width:250px;height:auto;margin:0 auto;border:1.5px solid var(--line);border-radius:16px;background:#fff}
+.vid-ph{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--line);border-radius:10px;color:var(--muted);font-size:20px;text-align:center;padding:12px}
+.vid-play{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;border:1.5px solid var(--line);color:var(--accent-text);font-size:22px;padding-left:4px}
+.st-text a{color:var(--accent-text)}
 .tags{display:flex;flex-wrap:wrap;gap:10px;margin:46px 0 0}
 .tags span{font-size:21px;color:var(--accent-text);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 6px}
 .st-cta{display:flex;justify-content:flex-end;margin:26px 0 0}
@@ -680,7 +686,7 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <p>Web checkout · mobile SDK · 16 engineering squads · platform execution</p>
 <p>When multiple squads solve related problems differently, execution itself becomes a product problem.</p>
 <p>Product OperationsCross-Squad ExecutionVelocity</p>
-<h3>Three levels, one way of thinking</h3></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
+<h3>Three levels, one way of thinking</h3></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/building/pantry-vault-ai">What I’m building: Pantry Vault</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
   <a class="btn contact" id="contact" href="https://www.linkedin.com/in/hardijain-pm/" target="_blank" rel="noopener">Contact me</a>
@@ -722,6 +728,7 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
   <section class="view" id="v-story2" aria-label="The J.P. Morgan story"></section>
   <section class="view" id="v-prod" aria-label="Product stories"></section>
   <section class="view" id="v-pstory" aria-label="Product story"></section>
+  <section class="view" id="v-build" aria-label="What I’m building: Pantry Vault"></section>
   <section class="view" id="v-chapter" aria-label="Chapter">
     <div class="player" id="player">
       <div class="pl-top"><a class="link" href="/map" data-go="nav">Map</a></div>
@@ -1339,7 +1346,7 @@ if(typeof module!=='undefined')module.exports=SK;
   var order=['ia','sa','au','pm','ai'];
   var progress={ia:false,sa:false,au:false,pm:false,fin:false};
   var CH={}; SK.chapters.forEach(function(c){ CH[c.id]=c; }); CH.fin=SK.finale;
-  var views={intro:$('v-intro'),nav:$('v-nav'),chapter:$('v-chapter'),how:$('v-how'),story:$('v-story'),story2:$('v-story2'),prod:$('v-prod'),pstory:$('v-pstory')};
+  var views={intro:$('v-intro'),nav:$('v-nav'),chapter:$('v-chapter'),how:$('v-how'),story:$('v-story'),story2:$('v-story2'),prod:$('v-prod'),pstory:$('v-pstory'),build:$('v-build')};
   var player=$('player'), sketch=$('sketch'), sk=$('sk'), msgEl=$('msg'), nextBtn=$('next'), cprog=$('cprog'), aix=$('aix'), mlink=$('mlink');
   var cur=null, bi=0, ptimers=[];
   /* views are built the first time they open, so each URL's rendered page holds only its own content */
@@ -1350,7 +1357,7 @@ if(typeof module!=='undefined')module.exports=SK;
   var hIdx=0, navIdx=1;
   /* ---------- real paths, one per page, so each is indexable and shareable ---------- */
   var SITE='https://hardijain.com';
-  var ROUTES={intro:'/',nav:'/map',how:'/how-i-work',
+  var ROUTES={intro:'/',nav:'/map',how:'/how-i-work',build:'/building/pantry-vault-ai',
     story:'/automation-stories/audit-reconciliation-automation',
     story2:'/automation-stories/fund-operations-nav-reporting',
     prod:'/product-stories'};
@@ -1365,7 +1372,7 @@ if(typeof module!=='undefined')module.exports=SK;
   var PID={}, CHID={}, k;
   for(k in PSLUG) PID[PSLUG[k]]=k;
   for(k in CHSLUG) CHID[CHSLUG[k]]=k;
-  /*SEO:start*/var SEO={"/":{"title":"Hardi Jain | SaaS & AI-Enabled Product Manager","description":"Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery."},"/product-stories":{"title":"SaaS product case studies: B2C, B2B, enterprise | Hardi Jain","description":"Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery."},"/product-stories/checkout-conversion-bot-detection":{"title":"Checkout conversion drop traced to bot traffic | Hardi Jain","description":"Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA."},"/product-stories/down-payment-emi-high-value-checkout":{"title":"Down payment + EMI for high-value checkout | Hardi Jain","description":"B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts."},"/product-stories/partial-payments-education-payment-links":{"title":"Partial payments for school fee payment links | Hardi Jain","description":"B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment."},"/product-stories/cross-platform-payment-ux-standardization":{"title":"Cross-platform payment UX standardization | Hardi Jain","description":"B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement."},"/product-stories/self-serve-payment-links-merchant-configuration":{"title":"Self-serve payment links for merchants | Hardi Jain","description":"B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share."},"/product-stories/payment-links-access-governance":{"title":"Payment link access control for sales agents | Hardi Jain","description":"Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business."},"/product-stories/cross-squad-execution-and-delivery":{"title":"Cross-squad delivery on a payments platform | Hardi Jain","description":"Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem."},"/automation-stories/audit-reconciliation-automation":{"title":"Audit reconciliation automation case study | Hardi Jain","description":"How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations."},"/automation-stories/fund-operations-nav-reporting":{"title":"Fund operations and NAV reporting automation | Hardi Jain","description":"Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours."},"/map":{"title":"From audit to SaaS product and AI | Hardi Jain","description":"Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them."},"/how-i-work":{"title":"How I work: product management principles | Hardi Jain","description":"Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features."}};/*SEO:end*/
+  /*SEO:start*/var SEO={"/":{"title":"Hardi Jain | SaaS & AI-Enabled Product Manager","description":"Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery."},"/product-stories":{"title":"SaaS product case studies: B2C, B2B, enterprise | Hardi Jain","description":"Seven product management case studies from a payments SaaS platform: checkout conversion, EMI, payment links, access control and cross-squad delivery."},"/product-stories/checkout-conversion-bot-detection":{"title":"Checkout conversion drop traced to bot traffic | Hardi Jain","description":"Payment success rate fell from 65% to 60% on a 10M-user checkout. How funnel analysis found bot traffic, and why invisible detection beat CAPTCHA."},"/product-stories/down-payment-emi-high-value-checkout":{"title":"Down payment + EMI for high-value checkout | Hardi Jain","description":"B2C case study: letting customers pay part upfront and the rest in EMIs on purchases above ₹50,000, to cut drop-off on high-ticket checkouts."},"/product-stories/partial-payments-education-payment-links":{"title":"Partial payments for school fee payment links | Hardi Jain","description":"B2B2C case study: schools set how much parents pay first, so fee collection through payment links stopped depending on one full upfront payment."},"/product-stories/cross-platform-payment-ux-standardization":{"title":"Cross-platform payment UX standardization | Hardi Jain","description":"B2B case study: mapping components onto live payment journeys to find where two surfaces behaved differently, then turning each gap into a requirement."},"/product-stories/self-serve-payment-links-merchant-configuration":{"title":"Self-serve payment links for merchants | Hardi Jain","description":"B2B SaaS case study: moving payment link customization out of the engineering queue and into a merchant configuration layer: configure, preview, share."},"/product-stories/payment-links-access-governance":{"title":"Payment link access control for sales agents | Hardi Jain","description":"Enterprise SaaS case study: a scoped workspace that lets external sales agents create payment links without seeing the rest of the business."},"/product-stories/cross-squad-execution-and-delivery":{"title":"Cross-squad delivery on a payments platform | Hardi Jain","description":"Enterprise case study: when several squads built on one product surface, a shared readiness check and quality gate fixed what looked like a capacity problem."},"/automation-stories/audit-reconciliation-automation":{"title":"Audit reconciliation automation case study | Hardi Jain","description":"How repeated reconciliation logic became a reusable system, so auditors could investigate exceptions instead of repeating calculations."},"/automation-stories/fund-operations-nav-reporting":{"title":"Fund operations and NAV reporting automation | Hardi Jain","description":"Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours."},"/building/pantry-vault-ai":{"title":"Building Pantry Vault with AI tools, no engineer | Hardi Jain","description":"A personal project: taking an AI Studio prototype to a live pantry app with sign-in, a database, bill scanning and free-tier AI fallback. What I cut and why."},"/map":{"title":"From audit to SaaS product and AI | Hardi Jain","description":"Five chapters from internal and statutory audit through automation to SaaS product management and AI, and the thread that connects them."},"/how-i-work":{"title":"How I work: product management principles | Hardi Jain","description":"Six product principles: empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features."}};/*SEO:end*/
   var META={intro:['Hardi Jain | SaaS & AI-Enabled Product Manager','Hardi Jain, SaaS and AI-enabled product manager.']};
   function path(st){
     if(!st) return '/';
@@ -1419,6 +1426,7 @@ if(typeof module!=='undefined')module.exports=SK;
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
     '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
+    '<p class="more"><a class="link" href="/building/pantry-vault-ai" data-go="build">What I’m building<span class="ar" aria-hidden="true">→</span></a></p>'+
     '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; var extra=id==='au'?'<p><a href="/automation-stories/fund-operations-nav-reporting" data-go="story2">Fund operations and NAV reporting</a></p>':''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':'')+extra; }).join('')+'</div></div>'; });
   lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
@@ -1596,7 +1604,61 @@ if(typeof module!=='undefined')module.exports=SK;
        v:vs(col(nd('THE DATA WILL KEEP CHANGING.<br><small>The workflow doesn’t always have to.</small>','on')),
             two(cb('HUMAN JUDGMENT',chain(['Exceptions','Investigation','Review'],'hi')),
                 cb('REPEATABLE LOGIC',chain(['Calculations','Mappings','Outputs']))))}]
-  }];
+  },{
+    id:'build', tags:['#personalproject','#AIbuild','#MVP'],
+    title:'Building Pantry Vault, a pantry app for vegetarian kitchens',
+    lede:'A personal project. I wanted to find out how far a product manager can take an idea with AI tools and no engineer: from one prompt in Google AI Studio to an app with sign-in, a database and a live URL.',
+    secs:[
+    {n:'01',k:'WHY THIS ONE',
+     h:'It started with a packet of spinach.',
+     p:['In my kitchen, paneer and curd go off at the back of the fridge, the spinach wilts before anyone cooks it, and the dal runs out on a Wednesday night. We still end up ordering in.',
+        'I didn’t start with market research. I picked a problem I see every week and can test on myself before asking anyone else to.'],
+     v:chain(['Buy groceries','Forget what’s inside','Spinach wilts','Order in anyway'])},
+    {n:'02',k:'THE FIRST VERSION',
+     h:'Google AI Studio gave me eight tabs in an afternoon.',
+     p:['I described the app in plain English and got back a React app with a pantry, recipes, voice input, a community feed, a seasonal produce map and WhatsApp alerts. The demo looked ready to launch.',
+        'Then I read the code. Everything was saved in one browser, so clearing it wiped the pantry. The community feed only showed my own posts to me. The “automated” WhatsApp alert was a pop-up that said it had sent something. The recipe-link analyser never opened the link.'],
+     v:two(cb('WHAT THE DEMO SHOWED',chain(['8 tabs','AI everywhere','Looks finished'])),
+           cb('WHAT WAS UNDERNEATH',chain(['One browser’s storage','Fake alerts','Guessed answers'],'hi')))},
+    {n:'03',k:'THE CUT',
+     h:'Eight tabs became four.',
+     p:['I kept what serves one loop: know what you have, cook what’s about to go off, restock what’s run out. Pantry, stock alerts, recipes from the pantry, and voice.',
+        'I deleted the community feed, the seasonal map and the link analyser. I also removed the medical-conditions profile. An app that estimates nutrition with AI has no business telling someone with diabetes what to eat.'],
+     v:two(cb('KEPT',chain(['Pantry','Stock alerts','Recipes','Voice'],'hi')),
+           cb('CUT',chain(['Community feed','Seasonal map','Link analyser','Health advice'])))},
+    {n:'04',k:'MAKING IT REAL',
+     h:'The part AI builders don’t give you.',
+     p:['Before anyone else could use it, the app needed accounts, a real database and a limit on AI spend. Sign-in is an emailed link. Each household can only read its own rows in the database. Every account gets 30 AI requests a day, so nobody can run up a bill.',
+        'I didn’t write this code myself. I directed an AI coding agent: decided what each piece had to do, reviewed what came back, and tested it on the live site.'],
+     v:chain(['Sign in with an email link','Your pantry only','30 AI requests a day','Live on Vercel'])},
+    {n:'05',k:'THE FEATURE I ADDED',
+     h:'Nobody types their groceries in.',
+     p:['Most pantry apps die at data entry, so I added a way around it: take a photo of a shop bill, or upload a screenshot of a Zepto or Blinkit order.',
+        'The AI keeps only the food, skips delivery fees and dish soap, reads “2 × 500 ml” as a litre of milk and guesses a use-by date for each item. Nothing is saved until you’ve seen the list and unticked anything it got wrong.'],
+     v:'<figure class="shot"><img src="/img/pantry-vault-ai/bill-scan-review.webp" width="390" height="844" loading="lazy" alt="Review list after scanning an order: eight items with quantities, one unticked"></figure>'},
+    {n:'06',k:'WHEN THE FREE TIER SAID NO',
+     h:'Error 503: this model is experiencing high demand.',
+     p:['The first real scan failed. Google’s free Gemini tier was overloaded, and I have no budget for a paid API.',
+        'So the app now tries Gemini, then Groq, then OpenRouter, all on free tiers, and uses the first one that answers. Finding the error took longer than fixing it: after a few failures the browser had quietly started blocking the app’s pop-ups, so a failed import looked like a button that did nothing. Errors now show inside the app.'],
+     v:col(nd('Your photo or list','hi'),ar(),nd('Gemini'),ar(),nd('Groq<br><small>if Gemini is busy</small>'),ar(),nd('OpenRouter<br><small>if Groq is busy too</small>'),ar(),nd('Items to review','on'))},
+    {n:'07',k:'WHAT IT LOOKS LIKE',
+     h:'The app on a phone.',
+     p:['Screens from the live app, filled with sample data: the pantry with what’s expiring, a recipe built from what’s in it, and the restock list that goes out on WhatsApp.',
+        'A short walkthrough video is on its way.'],
+     v:vs('<div class="vid-ph" role="img" aria-label="Walkthrough video coming soon"><span class="vid-play" aria-hidden="true">▶</span><span>Walkthrough video coming soon</span></div>',
+          '<div class="shots">'+[['pantry','Pantry with items expiring this week'],['recipe','Palak paneer suggested from the spinach and paneer in the pantry'],['whatsapp-list','Restock message ready to send on WhatsApp']]
+            .map(function(s){ return '<figure class="shot"><img src="/img/pantry-vault-ai/'+s[0]+'.webp" width="390" height="844" loading="lazy" alt="'+s[1]+'"></figure>'; }).join('')+'</div>')},
+    {n:'08',k:'WHERE IT STANDS',
+     h:'Live, and so far I’m the only one using it.',
+     p:['The next step is 10 to 20 households I can talk to after their first week. Before I invite them I want two things in place: an “I cooked this” button that takes ingredients off the shelf, and a daily reminder about what’s about to expire.',
+        'The number I’ll watch is simple: how many people are still keeping their pantry up to date after week one. A pantry app with a stale pantry is useless, and paying for one would be worse.',
+        '<a href="https://pantry-vault-ai.vercel.app" target="_blank" rel="noopener">Live app</a> (sign-in by invite) · <a href="https://github.com/hardijain26/pantry_vault_ai" target="_blank" rel="noopener">Code on GitHub</a>'],
+     v:chain(['Me','10 to 20 households','“I cooked this” + daily reminder','Still updating after week one?'])}],
+    ends:[
+      {h:'What I’m taking from it',
+       v:col(nd('AI TOOLS GET YOU A DEMO IN AN AFTERNOON.<br><small>The product is what comes after: who can see the data, what each request costs, and what happens when a free service says no.</small>','on'))}]
+  }
+];
 
   function storySection(x){
     return '<section class="st"><p class="st-n">'+x.n+' \u00b7 '+x.k+'</p><h3>'+x.h+'</h3>'+
@@ -2409,7 +2471,7 @@ if(typeof module!=='undefined')module.exports=SK;
     mk.setAttribute('aria-label',chap?'Home, back to the map':'Hardi Jain, home');
     $('role').hidden=(name==='intro'||chap);
     if(name==='nav'){ renderMap(); updateSlim(); }
-    if(name==='story'||name==='story2'||name==='pstory') storyScroll();
+    if(name==='story'||name==='story2'||name==='pstory'||name==='build') storyScroll();
     foot.classList.toggle('on',name==='intro'&&footReady);
     window.scrollTo(0,0);
     var h=views[name].querySelector('h1,h2');
@@ -2422,7 +2484,7 @@ if(typeof module!=='undefined')module.exports=SK;
     cur=CH[id]; bi=idx||0;
     aix.classList.remove('on'); aix.hidden=true;
     mlink.classList.remove('on'); mlink.hidden=true;
-    aix.innerHTML=cur.ai?'<p><a class="btn build" href="https://github.com/hardijain26" target="_blank" rel="noopener"><span>See what I’m building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>':'';
+    aix.innerHTML=cur.ai?'<p><a class="btn build" href="/building/pantry-vault-ai" data-go="build"><span>See what I’m building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>':'';
     cprog.innerHTML=cur.beats.map(function(_,k){ return '<button type="button" data-b="'+k+'" aria-label="Slide '+(k+1)+' of '+cur.beats.length+'"></button>'; }).join('');
   }
   function openChapter(id,atEnd,hist){
