@@ -1613,6 +1613,7 @@ if(typeof module!=='undefined')module.exports=SK;
   },{
     id:'build', tags:['#personalproject','#AIbuild','#nocode','#MVP'],
     title:'Building Pantry Vault, a pantry app for vegetarian kitchens',
+    cta:{to:'medvoice', label:'Next story'},
     lede:'Indian households throw away about 55 kg of food per person every year. I wanted to find out whether one product manager, with AI tools and no engineer, could build something that stops some of it, and ship it to a live URL.',
     secs:[
     {n:'01',k:'CONTEXT AND ROLE',
@@ -2588,8 +2589,7 @@ if(typeof module!=='undefined')module.exports=SK;
     cur=CH[id]; bi=idx||0;
     aix.classList.remove('on'); aix.hidden=true;
     mlink.classList.remove('on'); mlink.hidden=true;
-    aix.innerHTML=cur.ai?'<p><a class="btn build" href="/building/pantry-vault-ai" data-go="build"><span>Still building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>'+
-      '<p><a class="link" href="/building/med-voice" data-go="medvoice">Next<span class="ar" aria-hidden="true">→</span></a></p>':'';
+    aix.innerHTML=cur.ai?'<p><a class="btn build" href="/building/pantry-vault-ai" data-go="build"><span>Still building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>':'';
     cprog.innerHTML=cur.beats.map(function(_,k){ return '<button type="button" data-b="'+k+'" aria-label="Slide '+(k+1)+' of '+cur.beats.length+'"></button>'; }).join('');
   }
   function openChapter(id,atEnd,hist){

@@ -704,7 +704,8 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <p>Product: framing a problem with data, cutting scope to one loop, choosing the metric that tests the core assumption.</p>
 <p>Working with AI: writing specs an AI can build from, reviewing its output instead of trusting it, knowing when a prototype is hiding fake features.</p>
 <p>Enough technical depth to run a build: sign-in and per-user data, keeping API keys on the server, usage limits, provider fallback, reading error logs to find a root cause.</p>
-<p>Judgment: removing a feature that looked good but could cause harm, and being plain about what’s live and what isn’t.</p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/building/pantry-vault-ai">What I’m building: Pantry Vault</a></li><li><a href="/building/med-voice">What I’m building: Med-Voice</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
+<p>Judgment: removing a feature that looked good but could cause harm, and being plain about what’s live and what isn’t.</p>
+<p><a href="/building/med-voice">Next story</a></p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/building/pantry-vault-ai">What I’m building: Pantry Vault</a></li><li><a href="/building/med-voice">What I’m building: Med-Voice</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
   <a class="btn contact" id="contact" href="https://www.linkedin.com/in/hardijain-pm/" target="_blank" rel="noopener">Contact me</a>
@@ -1620,6 +1621,7 @@ if(typeof module!=='undefined')module.exports=SK;
   },{
     id:'build', tags:['#personalproject','#AIbuild','#nocode','#MVP'],
     title:'Building Pantry Vault, a pantry app for vegetarian kitchens',
+    cta:{to:'medvoice', label:'Next story'},
     lede:'Indian households throw away about 55 kg of food per person every year. I wanted to find out whether one product manager, with AI tools and no engineer, could build something that stops some of it, and ship it to a live URL.',
     secs:[
     {n:'01',k:'CONTEXT AND ROLE',
@@ -2595,8 +2597,7 @@ if(typeof module!=='undefined')module.exports=SK;
     cur=CH[id]; bi=idx||0;
     aix.classList.remove('on'); aix.hidden=true;
     mlink.classList.remove('on'); mlink.hidden=true;
-    aix.innerHTML=cur.ai?'<p><a class="btn build" href="/building/pantry-vault-ai" data-go="build"><span>Still building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>'+
-      '<p><a class="link" href="/building/med-voice" data-go="medvoice">Next<span class="ar" aria-hidden="true">→</span></a></p>':'';
+    aix.innerHTML=cur.ai?'<p><a class="btn build" href="/building/pantry-vault-ai" data-go="build"><span>Still building</span><span class="ld" aria-hidden="true"><i></i><i></i><i></i></span></a></p>':'';
     cprog.innerHTML=cur.beats.map(function(_,k){ return '<button type="button" data-b="'+k+'" aria-label="Slide '+(k+1)+' of '+cur.beats.length+'"></button>'; }).join('');
   }
   function openChapter(id,atEnd,hist){
