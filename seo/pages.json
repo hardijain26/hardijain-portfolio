@@ -160,6 +160,17 @@
       "updated": "2026-09-27"
     },
     {
+      "path": "/building/med-voice",
+      "type": "Article",
+      "section": "Personal project",
+      "parent": "/map",
+      "nav": "What I’m building: Med-Voice",
+      "title": "Building Med-Voice, a prescription read aloud | Hardi Jain",
+      "description": "Personal project case study: about half of long-term medication is taken incorrectly, often because the label can’t be read. Turning a prescription photo into spoken instructions in 11 languages, built with AI tools and no engineer.",
+      "published": "2026-09-27",
+      "updated": "2026-09-27"
+    },
+    {
       "path": "/map",
       "type": "WebPage",
       "nav": "Career journey",
