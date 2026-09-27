@@ -641,17 +641,17 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <h3><a href="/product-stories/checkout-conversion-bot-detection">When the funnel lied</a></h3>
 <p>SRT optimization through bot detection</p>
 <p>A 5-point SRT drop looked like a checkout problem. The investigation revealed abnormal bot traffic distorting the funnel.</p>
-<p>Data Investigation Root Cause Trade-offs</p>
+<p>Data InvestigationRoot CauseTrade-offs</p>
 <p>STORY 02</p>
 <h3><a href="/product-stories/down-payment-emi-high-value-checkout">The purchase was ready. The payment wasn’t.</a></h3>
 <p>Enabling payment flexibility for high-value transactions</p>
 <p>Turning a payment option into a customer decision point.</p>
-<p>&gt; ₹50K transactions Customer Experience Product Design</p>
+<p>&gt; ₹50K transactionsCustomer ExperienceProduct Design</p>
 <p>STORY 03</p>
 <h3><a href="/product-stories/partial-payments-education-payment-links">The fee was due. The full payment wasn’t always possible.</a></h3>
 <p>Partial payments for education payment links</p>
 <p>Designing flexibility into the checkout journey without losing sight of the transaction experience.</p>
-<p>EdTech / Education Payment Links Conversion</p>
+<p>EdTech / EducationPayment LinksConversion</p>
 <p>From optimizing transactions to simplifying systems.</p>
 <p>B2B</p>
 <h3>Turning complexity into product capability.</h3>
@@ -660,12 +660,12 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <h3><a href="/product-stories/cross-platform-payment-ux-standardization">One platform. Many products.</a></h3>
 <p>One payment platform. Different surfaces. One experience standard.</p>
 <p>A design audit tells you what looks different. Mapping components onto live journeys tells you what behaves differently.</p>
-<p>UX Standardization Experience Gap Analysis Web &amp; SDK Parity</p>
+<p>UX StandardizationExperience Gap AnalysisWeb &amp; SDK Parity</p>
 <p>STORY 05</p>
 <h3><a href="/product-stories/self-serve-payment-links-merchant-configuration">From dependency to self-service</a></h3>
 <p>One payment link. Many merchant needs.</p>
 <p>Turning recurring operational dependencies into capabilities customers could manage themselves.</p>
-<p>Self-Service Merchant Enablement Product Systems</p>
+<p>Self-ServiceMerchant EnablementProduct Systems</p>
 <p>From product to organization.</p>
 <p>ENTERPRISE</p>
 <h3>Making complex organizations move faster.</h3>
@@ -674,12 +674,12 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <h3><a href="/product-stories/payment-links-access-governance">Payment links access governance</a></h3>
 <p>Enterprise payment links · access governance · role-based access</p>
 <p>Giving distributed sales teams the access they need, without exposing the enterprise behind them.</p>
-<p>RBAC Access Governance Data Isolation</p>
+<p>RBACAccess GovernanceData Isolation</p>
 <p>STORY 07</p>
 <h3><a href="/product-stories/cross-squad-execution-and-delivery">From squads to system</a></h3>
 <p>Web checkout · mobile SDK · 16 engineering squads · platform execution</p>
 <p>When multiple squads solve related problems differently, execution itself becomes a product problem.</p>
-<p>Product Operations Cross-Squad Execution Velocity</p>
+<p>Product OperationsCross-Squad ExecutionVelocity</p>
 <h3>Three levels, one way of thinking</h3></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
@@ -1419,7 +1419,7 @@ if(typeof module!=='undefined')module.exports=SK;
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
     '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
-    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':''); }).join('')+'</div></div>'; });
+    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; var extra=id==='au'?'<p><a href="/automation-stories/fund-operations-nav-reporting" data-go="story2">Fund operations and NAV reporting</a></p>':''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':'')+extra; }).join('')+'</div></div>'; });
   lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
     '<p class="hint2">Pick any one to see what it means in practice.</p>'+
@@ -1537,6 +1537,7 @@ if(typeof module!=='undefined')module.exports=SK;
   },{
     id:'story2', tags:['#automation','#fundoperations','#workflow'],
     title:'The numbers changed every day. The process didn’t need to.',
+    cta:{to:'story', label:'Back to: Audit reconciliation automation'},
     lede:'Whether it was a daily capital call or a quarterly NAV process, the opportunity was the same: identify repeatable logic, automate the workflow, and direct human effort toward exceptions rather than routine processing.',
     secs:[
     {n:'01',k:'CONTEXT',

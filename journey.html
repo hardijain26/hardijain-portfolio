@@ -1272,7 +1272,7 @@ if(typeof module!=='undefined')module.exports=SK;
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
     '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
-    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':''); }).join('')+'</div></div>'; });
+    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; var extra=id==='au'?'<p><a href="/automation-stories/fund-operations-nav-reporting" data-go="story2">Fund operations and NAV reporting</a></p>':''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':'')+extra; }).join('')+'</div></div>'; });
   lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
     '<p class="hint2">Pick any one to see what it means in practice.</p>'+
@@ -1390,6 +1390,7 @@ if(typeof module!=='undefined')module.exports=SK;
   },{
     id:'story2', tags:['#automation','#fundoperations','#workflow'],
     title:'The numbers changed every day. The process didn’t need to.',
+    cta:{to:'story', label:'Back to: Audit reconciliation automation'},
     lede:'Whether it was a daily capital call or a quarterly NAV process, the opportunity was the same: identify repeatable logic, automate the workflow, and direct human effort toward exceptions rather than routine processing.',
     secs:[
     {n:'01',k:'CONTEXT',

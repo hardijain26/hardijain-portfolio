@@ -693,7 +693,8 @@ h1,.hero-h{font-weight:700;font-size:clamp(58px,8.6vw,116px);line-height:.95;mar
 <h3>The signal recovered.</h3>
 <p>Within one month of launch, SRT improved from 60% to 67%.</p>
 <p>The bot traffic was mitigated without introducing an upfront CAPTCHA challenge into the checkout experience.</p>
-<h3>What this story says about how I solve problems</h3></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
+<h3>What this story says about how I solve problems</h3>
+<p><a href="/product-stories/down-payment-emi-high-value-checkout">Next story</a></p></main><nav aria-label="Site"><ul><li><a href="/">Home</a></li><li><a href="/product-stories">Product case studies</a></li><li><a href="/product-stories/checkout-conversion-bot-detection">Checkout conversion and bot detection</a></li><li><a href="/product-stories/down-payment-emi-high-value-checkout">Down payment and EMI checkout</a></li><li><a href="/product-stories/partial-payments-education-payment-links">Partial payments for school fees</a></li><li><a href="/product-stories/cross-platform-payment-ux-standardization">Cross-platform payment UX</a></li><li><a href="/product-stories/self-serve-payment-links-merchant-configuration">Self-serve payment links</a></li><li><a href="/product-stories/payment-links-access-governance">Access control for sales agents</a></li><li><a href="/product-stories/cross-squad-execution-and-delivery">Cross-squad delivery</a></li><li><a href="/automation-stories/audit-reconciliation-automation">Audit reconciliation automation</a></li><li><a href="/automation-stories/fund-operations-nav-reporting">Fund operations and NAV reporting</a></li><li><a href="/map">Career journey</a></li><li><a href="/how-i-work">How I work</a></li></ul></nav></div><!--SSR:end-->
 <div class="app">
   <div class="stars" id="stars" aria-hidden="true"></div>
   <a class="btn contact" id="contact" href="https://www.linkedin.com/in/hardijain-pm/" target="_blank" rel="noopener">Contact me</a>
@@ -1432,7 +1433,7 @@ if(typeof module!=='undefined')module.exports=SK;
     '<div class="road" id="road"></div>'+
     '<div class="worked"><p class="worked-label">Where I’ve worked</p><ol class="cos" id="cos">'+COMPANIES.map(function(c,i){ return '<li style="--i:'+i+'">'+c+'</li>'; }).join('')+'</ol></div>'+
     '<p class="more"><a class="link" href="/how-i-work" data-go="how">How I work<span class="ar" aria-hidden="true">→</span></a></p>'+
-    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':''); }).join('')+'</div></div>'; });
+    '<div class="sr"><h2>The five chapters</h2>'+order.map(function(id,i){ var c=CH[id], m=c.msg||(c.beats&&c.beats[0]&&c.beats[0].msg)||''; var extra=id==='au'?'<p><a href="/automation-stories/fund-operations-nav-reporting" data-go="story2">Fund operations and NAV reporting</a></p>':''; return '<h3>'+(i+1)+'. '+c.name+'</h3>'+(m?'<p>'+m+'</p>':'')+(c.story?'<p><a href="'+(ROUTES[c.story.to]||'/')+'" data-go="'+c.story.to+'">'+c.story.label+'</a></p>':'')+extra; }).join('')+'</div></div>'; });
   lazy('how',function(){ views.how.innerHTML='<div class="page how"><p class="back"><a class="link" href="/map" data-go="nav">Map</a></p>'+
     '<h1>How I work</h1>'+
     '<p class="hint2">Pick any one to see what it means in practice.</p>'+
@@ -1550,6 +1551,7 @@ if(typeof module!=='undefined')module.exports=SK;
   },{
     id:'story2', tags:['#automation','#fundoperations','#workflow'],
     title:'The numbers changed every day. The process didn’t need to.',
+    cta:{to:'story', label:'Back to: Audit reconciliation automation'},
     lede:'Whether it was a daily capital call or a quarterly NAV process, the opportunity was the same: identify repeatable logic, automate the workflow, and direct human effort toward exceptions rather than routine processing.',
     secs:[
     {n:'01',k:'CONTEXT',

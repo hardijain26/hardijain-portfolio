@@ -47,6 +47,19 @@ for (const page of cfg.pages) {
     view.querySelectorAll('details').forEach((d) => { d.open = true; });
     const skip = (el) => el.closest('svg, .sbar, .st-viz, .pc-viz, button, .back, .st-cta, .tags, .more, .pc-go, .hint2');
     const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // A block's own text can carry a real <a href> (the map's chapter links, say). Keep those
+    // links instead of the plain innerText, which silently drops every href it finds.
+    const inline = (node) => {
+      let s = '';
+      node.childNodes.forEach((n) => {
+        if (n.nodeType === 3) { s += esc(n.textContent); return; }
+        if (n.nodeType !== 1) return;
+        if (n.getAttribute('aria-hidden') === 'true') return;
+        if (n.tagName === 'A' && n.getAttribute('href')) s += `<a href="${n.getAttribute('href')}">${inline(n)}</a>`;
+        else s += inline(n);
+      });
+      return s;
+    };
     const out = [];
     let list = false;
     for (const el of view.querySelectorAll('h1, h2, h3, h4, summary, p, li')) {
@@ -61,9 +74,22 @@ for (const page of cfg.pages) {
       // Card titles on the hub link to their story.
       const card = el.closest('.pc');
       const go = card && tag === 'h4' && card.querySelector('a[data-p]');
-      out.push(go ? `<h3><a href="${go.getAttribute('href')}">${esc(text)}</a></h3>` : `<${tag === 'h4' ? 'h3' : tag}>${esc(text)}</${tag === 'h4' ? 'h3' : tag}>`);
+      const body = inline(el).replace(/\s+/g, ' ').trim();
+      const outTag = tag === 'h4' ? 'h3' : tag;
+      out.push(go ? `<h3><a href="${go.getAttribute('href')}">${esc(text)}</a></h3>` : `<${outTag}>${body}</${outTag}>`);
     }
     if (list) out.push('</ul>');
+    // Contextual CTAs (Next story, All product stories, Back to: <sibling>) are real
+    // <a href> links the app renders, but they sit in .st-cta divs with no h1-4/p/li
+    // wrapper, so the loop above never sees them. Capture them explicitly so sibling
+    // and cluster links survive into the static, crawlable HTML.
+    for (const a of view.querySelectorAll('.st-cta a[href]')) {
+      const href = a.getAttribute('href');
+      const clone = a.cloneNode(true);
+      clone.querySelectorAll('[aria-hidden="true"]').forEach((n) => n.remove());
+      const text = clone.textContent.replace(/\s+/g, ' ').trim();
+      if (href && text) out.push(`<p><a href="${href}">${esc(text)}</a></p>`);
+    }
     return out.join('\n');
   });
   fs.writeFileSync(path.join(OUT, slug(page.path) + '.html'), body + '\n');
