@@ -15,7 +15,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'seo/pages.json'), 'utf8'));
 const SITE = cfg.site;
 const P = cfg.person;
-const today = new Date().toISOString().slice(0, 10);
+// Dates come from seo/pages.json (published / updated), so a rebuild doesn't mark every page as changed.
+const updated = (p) => p.updated || p.published;
 const slug = (p) => (p === '/' ? 'home' : p.slice(1).replace(/\//g, '__'));
 const url = (p) => SITE + p;
 const attr = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -60,7 +61,7 @@ function jsonld(page) {
   const node = { '@type': page.type, '@id': url(page.path) + '#page', url: url(page.path), name: page.title, description: page.description, isPartOf: { '@id': `${SITE}/#website` }, inLanguage: 'en' };
   if (page.type === 'ProfilePage') node.mainEntity = { '@id': `${SITE}/#person` };
   if (page.type === 'Article') {
-    Object.assign(node, { headline: page.title.replace(/ \| Hardi Jain$/, ''), author: { '@id': `${SITE}/#person` }, articleSection: page.section, image: ogImage(page), dateModified: today });
+    Object.assign(node, { headline: page.title.replace(/ \| Hardi Jain$/, ''), author: { '@id': `${SITE}/#person` }, articleSection: page.section, image: ogImage(page), datePublished: page.published, dateModified: updated(page) });
   }
   graph.push(node);
   if (page.path !== '/') graph.push(crumbs(page));
@@ -79,7 +80,15 @@ function ssr(page) {
 function render(page) {
   const t = attr(page.title), d = attr(page.description), u = url(page.path);
   const robots = page.noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large';
-  return tpl
+  let html = tpl;
+  if (page.path !== '/') {
+    // Inner pages keep the landing view for in-app navigation, but not its H1 or the
+    // homepage summary, so each URL has one H1 and no copy of the homepage text.
+    html = html
+      .replace(/(<div class="blk c-title">\s*)<h1>([\s\S]*?)<\/h1>/, '$1<p class="hero-h">$2</p>')
+      .replace(/\n\s*<section class="sr" aria-label="About this portfolio">[\s\S]*?<\/section>/, '');
+  }
+  return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${t}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${d}">`)
     .replace(/<meta name="robots" content="[^"]*">/, `<meta name="robots" content="${robots}">`)
@@ -104,7 +113,17 @@ for (const page of cfg.pages) {
   console.log('wrote', path.relative(ROOT, out));
 }
 
-// 5. Sitemap: indexable pages only.
-const sm = cfg.pages.filter((p) => !p.noindex).map((p) => `  <url>\n    <loc>${url(p.path)}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`).join('\n');
+// 5. Journey chapters (/journey/*, rewritten to journey.html in vercel.json): noindex, no canonical,
+//    no structured data. The app sets the chapter's own title once it loads.
+const journey = render({ ...byPath['/map'], noindex: true })
+  .replace(/\n<link rel="canonical" href="[^"]*">/, '')
+  .replace(/\n<meta property="og:url" content="[^"]*">/, '')
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '')
+  .replace(/<!--SSR:start-->[\s\S]*?<!--SSR:end-->/, `<!--SSR:start--><div id="ssr"><nav aria-label="Site"><ul>${navList}</ul></nav></div><!--SSR:end-->`);
+fs.writeFileSync(path.join(ROOT, 'journey.html'), journey);
+console.log('wrote journey.html');
+
+// 6. Sitemap: indexable pages only.
+const sm = cfg.pages.filter((p) => !p.noindex).map((p) => `  <url>\n    <loc>${url(p.path)}</loc>\n    <lastmod>${updated(p)}</lastmod>\n  </url>`).join('\n');
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sm}\n</urlset>\n`);
 console.log('wrote sitemap.xml');
