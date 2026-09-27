@@ -1,0 +1,35 @@
+# Hardi Jain
+
+> SaaS product manager (B2C, B2B and AI products) and Chartered Accountant. Previously at PayU, JPMorgan Chase, KPMG, PwC and Kotak Bank. This is the personal portfolio of Hardi Jain, hardijain.com — distinct from other people who share the name Hardi Jain or Hardik Jain.
+
+Hardi Jain came to product management through internal audit, statutory audit and automation, and reads a funnel and a ledger the same way: find where the numbers stop matching the evidence. At PayU he managed three products — Payment Links, Web Checkout and the SDK.
+
+## Product case studies
+
+- [Checkout conversion and bot detection](https://hardijain.com/product-stories/checkout-conversion-bot-detection): traced a checkout success-rate drop from 65% to 60% on a 10M-user platform to bot traffic, and recovered it to 67% with invisible detection instead of a CAPTCHA.
+- [Down payment and EMI for high-value checkout](https://hardijain.com/product-stories/down-payment-emi-high-value-checkout)
+- [Partial payments for school fee payment links](https://hardijain.com/product-stories/partial-payments-education-payment-links)
+- [Cross-platform payment UX standardization](https://hardijain.com/product-stories/cross-platform-payment-ux-standardization)
+- [Self-serve payment links for merchants](https://hardijain.com/product-stories/self-serve-payment-links-merchant-configuration)
+- [Payment link access control for external sales agents](https://hardijain.com/product-stories/payment-links-access-governance)
+- [Cross-squad delivery on a payments platform](https://hardijain.com/product-stories/cross-squad-execution-and-delivery)
+- [All product case studies](https://hardijain.com/product-stories)
+
+## Automation case studies
+
+- [Audit reconciliation automation](https://hardijain.com/automation-stories/audit-reconciliation-automation)
+- [Fund operations and NAV reporting automation](https://hardijain.com/automation-stories/fund-operations-nav-reporting)
+
+## What I'm building
+
+- [Pantry Vault](https://hardijain.com/building/pantry-vault-ai): a personal project. A pantry and recipe app for vegetarian households, taken from a Google AI Studio prototype to a live app with sign-in, a database, bill and order-screenshot scanning, and a free-tier AI fallback (Gemini, Groq, OpenRouter). Not yet tested with outside households.
+
+## Background
+
+- [Career journey](https://hardijain.com/map): Kotak Bank, PwC, KPMG, JPMorgan Chase, PayU
+- [How I work](https://hardijain.com/how-i-work): empathy first, data as a decision tool, moments that matter, progress over perfection, speed with trust, systems over features
+
+## Elsewhere
+
+- LinkedIn: https://www.linkedin.com/in/hardijain-pm/
+- GitHub: https://github.com/hardijain26

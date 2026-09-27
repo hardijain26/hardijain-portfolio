@@ -1,0 +1,54 @@
+<h1>Building Pantry Vault, a pantry app for vegetarian kitchens</h1>
+<p>Indian households throw away about 55 kg of food per person every year. I wanted to find out whether one product manager, with AI tools and no engineer, could build something that stops some of it, and ship it to a live URL.</p>
+<p>01 · CONTEXT AND ROLE</p>
+<h3>A personal project. I was the PM and the builder.</h3>
+<p>I’m between roles, and I wanted to test a question for myself: how far can a product manager get with AI tools alone? I picked a problem from my own kitchen so I could be the first user.</p>
+<p>I decided what to build, wrote every spec and prompt, reviewed and tested everything that came back, and ran the launch. I wrote no code by hand.</p>
+<p>02 · THE PROBLEM</p>
+<h3>Food goes off in the fridge while we order in.</h3>
+<p>UNEP’s Food Waste Index 2024 puts household food waste in India at about 55 kg per person a year, 78 million tonnes in total. Globally, households cause 60% of all food waste.</p>
+<p>In my kitchen it looks like this: paneer and curd forgotten at the back of the fridge, spinach wilting before anyone cooks it, dal running out on a Wednesday night. Pantry apps exist, but nobody keeps them up to date, because typing in every grocery item is a chore.</p>
+<p>Source: <a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index Report 2024</a></p>
+<p>03 · THE INSIGHT</p>
+<h3>The hard part is keeping the pantry up to date.</h3>
+<p>A pantry app is only useful if it knows what’s in the kitchen. The moment people stop updating it, every feature built on top gives wrong answers: expiry warnings, recipes, the shopping list.</p>
+<p>So the product has to make adding groceries almost effortless, and everything else has to serve one loop: know what you have, cook what’s about to go off, restock what’s run out.</p>
+<p>04 · THE SOLUTION</p>
+<h3>Four features, all serving that loop.</h3>
+<p>Scan a bill or order screenshot. A photo of a shop bill or a Zepto or Blinkit screenshot becomes a pantry list, with quantities and a use-by date for each item. You check the list before anything is saved.</p>
+<p>Pantry with expiry warnings. What’s expiring this week sits at the top.</p>
+<p>Recipes from the pantry. Tick what you want to use up and get two vegetarian recipes that follow your food habit, including Jain and vegan rules.</p>
+<p>Shopping list on WhatsApp. Items running low become a message for your family or your cook. Voice input takes a recipe dictated in Hindi or any other language and returns it in English.</p>
+<p>05 · HOW I BUILT IT (NO-CODE)</p>
+<h3>A prompt, then a coding agent I directed.</h3>
+<p>I described the app in plain English to Google AI Studio and got a working React prototype the same afternoon. It had eight tabs and looked finished.</p>
+<p>Then I read what it actually did. Everything was saved in one browser, the community feed only showed my own posts, the “automated” WhatsApp alert was just a pop-up, and the recipe-link analyser never opened the link. I cut it down to the four features above and moved to an AI coding agent (Claude) to build the real product: sign-in, a database, a server that keeps the AI keys private, and hosting.</p>
+<p>Every change followed the same routine: I wrote what it had to do, the agent built it, and I tested it on the live site before moving on.</p>
+<p>06 · KEY DECISIONS AND TRADEOFFS</p>
+<h3>What I chose, and what it cost.</h3>
+<p>Removed health advice. The prototype gave diabetes and PCOS “verdicts” from AI-guessed nutrition. It was the most impressive-looking feature, and I cut it. Wrong health advice is worse than none.</p>
+<p>Review before saving. Bill scans show a list you check first. One extra tap, in exchange for no wrong items in the pantry.</p>
+<p>Email sign-in link, no passwords or SMS. Free and quick to set up. SMS codes in India need sender registration and cost money per message.</p>
+<p>Free AI tiers with a fallback. No budget for a paid API, so the app switches providers when one is busy. Answers can vary slightly in quality between providers.</p>
+<p>Payment by UPI, flipped by hand. No payment gateway until people show they’ll pay.</p>
+<p>07 · CHALLENGES I SOLVED</p>
+<h3>Four things that broke, and the fix for each.</h3>
+<p>The app worked here and crashed live. Every AI request failed on Vercel with a blank error. The live server needed file references written differently than my test setup. Found by recreating Vercel’s conditions locally.</p>
+<p>“This model is experiencing high demand.” Google’s free tier turned requests away. The app now retries, then tries Groq, then OpenRouter.</p>
+<p>A button that did nothing. After a few failed attempts the browser had quietly started blocking the app’s pop-up errors. Errors now appear inside the app.</p>
+<p>Sign-in emails that only reached me. The database’s built-in email sender is a test service. Real households need a proper sending service on my own domain.</p>
+<p>08 · IMPACT AND WHAT I’D MEASURE</p>
+<h3>Live, and so far I’m the only user.</h3>
+<p>There are no user numbers to report yet. What exists: a live app that installs on a phone, with accounts, a private database per household, a cap of 30 AI requests a day per person, and the four features above.</p>
+<p>Next is a test with 10 to 20 households. The number I care most about is how many are still updating their pantry after week one, because that’s the insight from section 03 being tested. After that: how many recipes get cooked, how often an expiry warning leads to the item being used, and whether anyone pays after a 14-day trial.</p>
+<p><a href="https://pantry-vault-ai.vercel.app">Live app</a> (sign-in by invite) · <a href="https://github.com/hardijain26/pantry_vault_ai">Code on GitHub</a></p>
+<p>09 · REFLECTION</p>
+<h3>AI gets you a demo in an afternoon. The product is everything after.</h3>
+<p>The prototype took hours. Making it safe for someone else’s data took days: who can see what, what each request costs, what happens when a free service says no, and what the user sees when something fails.</p>
+<p>Two things I’d do differently. I’d read what the first version actually does on day one, before admiring what it looks like. And I’d test on the real hosting from the first change, not after the fifth.</p>
+<p>10 · SKILLS</p>
+<h3>What this project shows.</h3>
+<p>Product: framing a problem with data, cutting scope to one loop, choosing the metric that tests the core assumption.</p>
+<p>Working with AI: writing specs an AI can build from, reviewing its output instead of trusting it, knowing when a prototype is hiding fake features.</p>
+<p>Enough technical depth to run a build: sign-in and per-user data, keeping API keys on the server, usage limits, provider fallback, reading error logs to find a root cause.</p>
+<p>Judgment: removing a feature that looked good but could cause harm, and being plain about what’s live and what isn’t.</p>

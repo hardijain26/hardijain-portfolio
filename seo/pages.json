@@ -3,7 +3,7 @@
   "person": {
     "name": "Hardi Jain",
     "jobTitle": "SaaS Product Manager",
-    "description": "SaaS product manager and Chartered Accountant. B2C checkout, B2B merchant self-serve and enterprise platform work at PayU, now building with AI.",
+    "description": "SaaS product manager and Chartered Accountant. At PayU, traced a checkout success-rate drop from 65% to 60% to bot traffic and recovered it to 67% with invisible detection; also shipped B2B merchant self-serve tools and enterprise platform work. Now building with AI.",
     "credential": "Chartered Accountant",
     "alumniOf": [
       "PayU",
@@ -38,7 +38,7 @@
       "title": "Hardi Jain | SaaS & AI-Enabled Product Manager",
       "description": "Hardi Jain, SaaS product manager and Chartered Accountant. Read my case studies in B2C checkout, B2B payment links and platform delivery.",
       "published": "2026-09-20",
-      "updated": "2026-09-26"
+      "updated": "2026-09-27"
     },
     {
       "path": "/product-stories",
@@ -147,6 +147,28 @@
       "description": "Daily capital calls and quarterly NAV reporting, automated from one upload, cutting processing from two business days to under four hours.",
       "published": "2026-09-23",
       "updated": "2026-09-24"
+    },
+    {
+      "path": "/building/pantry-vault-ai",
+      "type": "Article",
+      "section": "Personal project",
+      "parent": "/map",
+      "nav": "What I’m building: Pantry Vault",
+      "title": "Building Pantry Vault with AI tools, no engineer | Hardi Jain",
+      "description": "Personal project case study: Indian homes waste about 55 kg of food per person a year. How I took an AI Studio prototype to a live pantry app with no engineer.",
+      "published": "2026-09-27",
+      "updated": "2026-09-27"
+    },
+    {
+      "path": "/building/med-voice",
+      "type": "Article",
+      "section": "Personal project",
+      "parent": "/map",
+      "nav": "What I’m building: Med-Voice",
+      "title": "Building Med-Voice, a prescription read aloud | Hardi Jain",
+      "description": "Personal project case study: about half of long-term medication is taken incorrectly, often because the label can’t be read. Turning a prescription photo into spoken instructions in 11 languages, built with AI tools and no engineer.",
+      "published": "2026-09-27",
+      "updated": "2026-09-27"
     },
     {
       "path": "/map",

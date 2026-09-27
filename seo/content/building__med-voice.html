@@ -1,0 +1,52 @@
+<h1>Building Med-Voice, a prescription label read aloud for seniors</h1>
+<p>About half of people on long-term medicines don’t take them correctly, often because the label can’t be read. I wanted to see how far a product manager could get with AI tools and no engineer: a prescription photo turned into clear spoken instructions, built in an afternoon and shipped to a live URL.</p>
+<p>01 · CONTEXT AND ROLE</p>
+<h3>A personal project, built in an afternoon. I was PM and builder.</h3>
+<p>I’m between roles and wanted a sharp test: could I take a real, evidenced problem from idea to a deployed, working product with AI tools alone, in about two hours?</p>
+<p>I chose the problem, wrote every spec and prompt, reviewed and tested what came back, and shipped it. I wrote no code by hand.</p>
+<p>02 · THE PROBLEM</p>
+<h3>The instructions are right there. Most people can’t use them.</h3>
+<p>The WHO puts adherence to long-term medication at about 50%. In India, only 40 to 60% of older adults take their medicines correctly, and low health literacy comes up again and again as the reason.</p>
+<p>A label is small, clinical, and often printed in a language the patient doesn’t read well. “1 cap PO BID p.c.” means nothing at the kitchen table, and “twice daily” never says when.</p>
+<p>03 · THE INSIGHT</p>
+<h3>The instructions already exist. Just remove the reading.</h3>
+<p>Every other medication app assumes you can already read and understand the label, then adds reminders on top. For the person I had in mind — a senior who reads slowly, in Tamil, not English — that assumption is the whole problem.</p>
+<p>So the product does one thing well: it reads the label for you and speaks it, in your language, and only then reminds you.</p>
+<p>04 · THE SOLUTION</p>
+<h3>Point the camera. Hear what to take, and when.</h3>
+<p>Photograph the label. No typing, no searching for the medicine by name.</p>
+<p>It reads and simplifies. AI pulls out the medicine and dose, rewrites the instructions in warm, plain language, and splits the day into meal-based times.</p>
+<p>It speaks, in 11 languages. Hindi, Tamil, Bengali, Spanish and more, with a phonetic version behind the scenes so any phone pronounces the script correctly.</p>
+<p>It reminds. A voice alarm at each dose time, with the one safety warning that matters pulled to the top.</p>
+<p>05 · HOW I BUILT IT (NO-CODE)</p>
+<h3>A prompt, then a coding agent I directed.</h3>
+<p>I described the app in plain English to Google AI Studio and had a working prototype the same afternoon. The vision AI (Gemini) does the hard part — reading the label, simplifying, translating — so there was no OCR or model to train.</p>
+<p>The prototype’s AI logic only ran on my machine and would have failed the moment it deployed. I directed a coding agent to move it into a serverless function so the live app actually works, then shipped it to Vercel.</p>
+<p>Every change followed the same routine: I wrote what it had to do, the agent built it, and I tested before moving on.</p>
+<p>06 · KEY DECISIONS AND TRADEOFFS</p>
+<h3>What I chose, and what it cost.</h3>
+<p>Voice-first, not app-first. A less “appy” interface, in exchange for something a low-vision senior can actually use.</p>
+<p>Lead B2B2C, through pharmacies. The person with the problem isn’t the one who pays; pharmacies and caregivers are. That reframed the go-to-market.</p>
+<p>No invented market size. I documented the sizing method and inputs to validate instead of a number I couldn’t stand behind.</p>
+<p>Flag the safety fallback. When the AI is busy the app shows sample guidance, clearly marked as a sample, never as a real reading.</p>
+<p>07 · CHALLENGES I SOLVED</p>
+<h3>Four things that broke, and the fix for each.</h3>
+<p>The AI worked here and 404’d live. The label-reading endpoint only ran in local dev. I traced it and moved the logic into a serverless function so it exists in production.</p>
+<p>The offline fallback showed the wrong medicine. When the AI was busy it returned a generic sample that a user could mistake for their own label. I flagged it so a sample can never pass as real.</p>
+<p>The uploaded source broke the build. The exported files had lost their folder structure. I restored it so a clean build passes.</p>
+<p>Untested across languages. I wrote a repeatable test that checks all 11 languages return complete, correctly-scripted, speakable text.</p>
+<p>08 · IMPACT AND WHAT I’D MEASURE</p>
+<h3>A live, deployable prototype — no outside users yet.</h3>
+<p>There are no usage numbers to report. What exists: a deployable app that reads a label and speaks it in 11 languages, with meal-based reminders and a fallback that’s honest about when it can’t read the label.</p>
+<p>Rather than claim results it hasn’t earned, I defined the metric that matters: doses each week where someone got accurate guidance and then took the medicine. Next is a small test with real seniors and caregivers.</p>
+<p><a href="https://medvoice-teal.vercel.app">Live app</a> · <a href="https://github.com/hardijain26/med_voice">Code on GitHub</a></p>
+<p>09 · REFLECTION</p>
+<h3>AI gets you a demo in an afternoon. The product is everything after.</h3>
+<p>The demo took an afternoon. Making it safe took the real work: what happens when the AI is busy, how to keep a sample from looking like a real reading, how to sound right in a language the phone can’t render, and how to fail honestly.</p>
+<p>The lesson repeats from my last build: read what the first version actually does, and test on the real hosting from the first change, not the fifth.</p>
+<p>10 · SKILLS</p>
+<h3>What this project shows.</h3>
+<p>Product: framing a problem with cited data, cutting scope to one job, choosing a metric that tests the core assumption, and picking a business model that matches who actually pays.</p>
+<p>Working with AI: writing specs an AI can build from, reviewing output instead of trusting it, and catching a prototype’s fake features.</p>
+<p>Enough technical depth to run a build: spotting a dev-only API, moving it to a serverless function, and writing a test that guards all 11 languages.</p>
+<p>Judgment: refusing an invented market size, and making a safety fallback honest rather than seamless.</p>
