@@ -1,0 +1,36 @@
+<h1>Building Pantry Vault, a pantry app for vegetarian kitchens</h1>
+<p>A personal project. I wanted to find out how far a product manager can take an idea with AI tools and no engineer: from one prompt in Google AI Studio to an app with sign-in, a database and a live URL.</p>
+<p>01 · WHY THIS ONE</p>
+<h3>It started with a packet of spinach.</h3>
+<p>In my kitchen, paneer and curd go off at the back of the fridge, the spinach wilts before anyone cooks it, and the dal runs out on a Wednesday night. We still end up ordering in.</p>
+<p>I didn’t start with market research. I picked a problem I see every week and can test on myself before asking anyone else to.</p>
+<p>02 · THE FIRST VERSION</p>
+<h3>Google AI Studio gave me eight tabs in an afternoon.</h3>
+<p>I described the app in plain English and got back a React app with a pantry, recipes, voice input, a community feed, a seasonal produce map and WhatsApp alerts. The demo looked ready to launch.</p>
+<p>Then I read the code. Everything was saved in one browser, so clearing it wiped the pantry. The community feed only showed my own posts to me. The “automated” WhatsApp alert was a pop-up that said it had sent something. The recipe-link analyser never opened the link.</p>
+<p>03 · THE CUT</p>
+<h3>Eight tabs became four.</h3>
+<p>I kept what serves one loop: know what you have, cook what’s about to go off, restock what’s run out. Pantry, stock alerts, recipes from the pantry, and voice.</p>
+<p>I deleted the community feed, the seasonal map and the link analyser. I also removed the medical-conditions profile. An app that estimates nutrition with AI has no business telling someone with diabetes what to eat.</p>
+<p>04 · MAKING IT REAL</p>
+<h3>The part AI builders don’t give you.</h3>
+<p>Before anyone else could use it, the app needed accounts, a real database and a limit on AI spend. Sign-in is an emailed link. Each household can only read its own rows in the database. Every account gets 30 AI requests a day, so nobody can run up a bill.</p>
+<p>I didn’t write this code myself. I directed an AI coding agent: decided what each piece had to do, reviewed what came back, and tested it on the live site.</p>
+<p>05 · THE FEATURE I ADDED</p>
+<h3>Nobody types their groceries in.</h3>
+<p>Most pantry apps die at data entry, so I added a way around it: take a photo of a shop bill, or upload a screenshot of a Zepto or Blinkit order.</p>
+<p>The AI keeps only the food, skips delivery fees and dish soap, reads “2 × 500 ml” as a litre of milk and guesses a use-by date for each item. Nothing is saved until you’ve seen the list and unticked anything it got wrong.</p>
+<p>06 · WHEN THE FREE TIER SAID NO</p>
+<h3>Error 503: this model is experiencing high demand.</h3>
+<p>The first real scan failed. Google’s free Gemini tier was overloaded, and I have no budget for a paid API.</p>
+<p>So the app now tries Gemini, then Groq, then OpenRouter, all on free tiers, and uses the first one that answers. Finding the error took longer than fixing it: after a few failures the browser had quietly started blocking the app’s pop-ups, so a failed import looked like a button that did nothing. Errors now show inside the app.</p>
+<p>07 · WHAT IT LOOKS LIKE</p>
+<h3>The app on a phone.</h3>
+<p>Screens from the live app, filled with sample data: the pantry with what’s expiring, a recipe built from what’s in it, and the restock list that goes out on WhatsApp.</p>
+<p>A short walkthrough video is on its way.</p>
+<p>08 · WHERE IT STANDS</p>
+<h3>Live, and so far I’m the only one using it.</h3>
+<p>The next step is 10 to 20 households I can talk to after their first week. Before I invite them I want two things in place: an “I cooked this” button that takes ingredients off the shelf, and a daily reminder about what’s about to expire.</p>
+<p>The number I’ll watch is simple: how many people are still keeping their pantry up to date after week one. A pantry app with a stale pantry is useless, and paying for one would be worse.</p>
+<p><a href="https://pantry-vault-ai.vercel.app">Live app</a> (sign-in by invite) · <a href="https://github.com/hardijain26/pantry_vault_ai">Code on GitHub</a></p>
+<h3>What I’m taking from it</h3>
