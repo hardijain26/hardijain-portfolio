@@ -23,6 +23,7 @@ Hardi Jain came to product management through internal audit, statutory audit an
 ## What I'm building
 
 - [Pantry Vault](https://hardijain.com/building/pantry-vault-ai): a personal project. A pantry and recipe app for vegetarian households, taken from a Google AI Studio prototype to a live app with sign-in, a database, bill and order-screenshot scanning, and a free-tier AI fallback (Gemini, Groq, OpenRouter). Not yet tested with outside households.
+- [Med-Voice](https://hardijain.com/building/med-voice): a personal project. Turns a prescription-label photo into spoken dosage instructions in 11 languages, built with AI tools and no engineer. About half of long-term medication is taken incorrectly, often because the label can't be read; the app reads and simplifies the label, speaks it in the patient's language, then reminds at each dose time.
 
 ## Background
 
